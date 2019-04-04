@@ -1,0 +1,12 @@
+{
+  "name": "underscore-migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "inspect": "node inspect index.js"
+  },
+  "author": "soer <soerson@pm.me>",
+  "license": "ISC"
+}

@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 const { isTsFile } = require("./isTsFile");
+const { parser } = require("./parse");
 //joining path of directory 
 const directoryPath = path.join(__dirname, '../bma/src/app/account');
 //passsing directoryPath and callback function
@@ -30,6 +31,8 @@ deepReadDir(directoryPath, function (err, file, absolutePathToFileDir) {
     }
 
     if (isTsFile(file.name)) {
-        console.log(absolutePathToFileDir + file.name);
+        const absolutePathToFile = path.join(absolutePathToFileDir, file.name);
+        console.log(file.name);
+        parser(absolutePathToFile);
     }
 });

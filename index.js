@@ -1,6 +1,8 @@
 //requiring path and fs modules
 const path = require('path');
 const fs = require('fs');
+
+const { isTsFile } = require("./isTsFile");
 //joining path of directory 
 const directoryPath = path.join(__dirname, '../bma/src/app/account');
 //passsing directoryPath and callback function
@@ -27,5 +29,7 @@ deepReadDir(directoryPath, function (err, file) {
         console.log(err);
     }
 
-    console.log(file.name);
+    if (isTsFile(file.name)) {
+        console.log(file.name);
+    }
 });

@@ -19,17 +19,17 @@ const deepReadDir = function (pathToDir, cb) {
                 return deepReadDir(path.join(pathToDir, dirent.name), cb);
             }
             // Do whatever you want to do with the file
-            cb(null, dirent);
+            cb(null, dirent, pathToDir);
         });
     });
 };
 
-deepReadDir(directoryPath, function (err, file) {
+deepReadDir(directoryPath, function (err, file, absolutePathToFileDir) {
     if (err) {
         console.log(err);
     }
 
     if (isTsFile(file.name)) {
-        console.log(file.name);
+        console.log(absolutePathToFileDir + file.name);
     }
 });

@@ -3,9 +3,9 @@ const path = require('path');
 const fs = require('fs');
 
 const { isTsFile } = require("./isTsFile");
-const { parser } = require("./parse");
+const { parser } = require("./parser");
 //joining path of directory 
-const directoryPath = path.join(__dirname, '../bma/src/app/account');
+const directoryPath = path.join(__dirname, '../bma/src/');
 //passsing directoryPath and callback function
 //
 const deepReadDir = function (pathToDir, cb) {

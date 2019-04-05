@@ -39,7 +39,7 @@ const parser = function (absolutePathToFile) {
         });
 
         let newUnderscoreImports = "";
-        requiredImports.forEach(func => newUnderscoreImports = newUnderscoreImports.concat(`import { _${func} } from 'underscore-es/${func}';\n`));
+        requiredImports.forEach(func => newUnderscoreImports = newUnderscoreImports.concat(`import _${func} from 'underscore-es/${func}';\n`));
 
         lines[indexOfImport] = newUnderscoreImports;
 
